@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Modern Rare Beauty 2025 Color Palette */
+    --background: 15 20% 98%;
+    --foreground: 340 15% 8%;
+
+    --card: 15 25% 97%;
+    --card-foreground: 340 15% 8%;
+
+    --popover: 15 30% 99%;
+    --popover-foreground: 340 15% 8%;
+
+    /* Brand Colors - Inspired by beauty & confidence */
+    --primary: 330 85% 60%;      /* Vibrant Pink */
+    --primary-foreground: 15 20% 98%;
+    --primary-glow: 330 85% 70%;
+
+    --secondary: 280 50% 65%;    /* Purple Accent */
+    --secondary-foreground: 15 20% 98%;
+
+    --muted: 15 10% 93%;
+    --muted-foreground: 340 8% 46%;
+
+    --accent: 45 95% 70%;        /* Golden Highlight */
+    --accent-foreground: 340 15% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 15 20% 98%;
+
+    --border: 15 8% 88%;
+    --input: 15 8% 88%;
+    --ring: 330 85% 60%;
+
+    --radius: 1rem;
+
+    /* Custom Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-hero: linear-gradient(135deg, hsl(330 85% 60%), hsl(280 50% 65%), hsl(45 95% 70%));
+    --gradient-glass: linear-gradient(135deg, hsl(15 20% 98% / 0.1), hsl(15 20% 98% / 0.3));
+    --gradient-card: linear-gradient(145deg, hsl(15 25% 97%), hsl(15 20% 99%));
+
+    /* Shadows & Effects */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-elegant: 0 20px 60px -10px hsl(var(--primary) / 0.15);
+    --shadow-glass: 0 8px 32px hsl(340 15% 8% / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Glass effect variables */
+    --glass-bg: hsl(15 20% 98% / 0.8);
+    --glass-border: hsl(15 20% 98% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode - Luxury Night Theme */
+    --background: 340 20% 8%;
+    --foreground: 15 25% 95%;
+
+    --card: 340 18% 10%;
+    --card-foreground: 15 25% 95%;
+
+    --popover: 340 20% 8%;
+    --popover-foreground: 15 25% 95%;
+
+    --primary: 330 85% 65%;      /* Brighter pink for dark mode */
+    --primary-foreground: 340 20% 8%;
+    --primary-glow: 330 85% 75%;
+
+    --secondary: 280 50% 70%;    /* Brighter purple for dark mode */
+    --secondary-foreground: 340 20% 8%;
+
+    --muted: 340 15% 15%;
+    --muted-foreground: 15 8% 65%;
+
+    --accent: 45 95% 75%;        /* Brighter gold for dark mode */
+    --accent-foreground: 340 20% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 15 25% 95%;
+
+    --border: 340 15% 18%;
+    --input: 340 15% 18%;
+    --ring: 330 85% 65%;
+
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-hero: linear-gradient(135deg, hsl(330 85% 65%), hsl(280 50% 70%), hsl(45 95% 75%));
+    --gradient-glass: linear-gradient(135deg, hsl(15 25% 95% / 0.05), hsl(15 25% 95% / 0.1));
+    --gradient-card: linear-gradient(145deg, hsl(340 18% 10%), hsl(340 15% 12%));
+
+    /* Dark Mode Glass */
+    --glass-bg: hsl(340 20% 8% / 0.8);
+    --glass-border: hsl(15 25% 95% / 0.1);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer components {
+  /* Glass morphism components */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl p-6;
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hover animations */
+  .hover-lift {
+    transition: var(--transition-smooth);
+    @apply hover:scale-105 hover:shadow-xl;
+  }
+
+  .hover-glow {
+    transition: var(--transition-smooth);
+    @apply hover:shadow-lg;
+    &:hover {
+      box-shadow: var(--shadow-glow);
+    }
+  }
+
+  /* Product card styles */
+  .product-card {
+    @apply glass-card hover-lift cursor-pointer overflow-hidden;
+    transition: var(--transition-spring);
+  }
+
+  .product-image {
+    @apply w-full h-64 object-cover rounded-xl mb-4 transition-transform duration-500 group-hover:scale-110;
+  }
+
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.5);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
+  }
+}
