@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { productImages } from '@/lib/productImages';
 
 export interface Product {
   id: string;
@@ -54,7 +55,7 @@ const mockProducts: Product[] = [
     name: 'Soft Pinch Liquid Blush',
     description: 'A weightless, long-lasting liquid blush that blends seamlessly for a natural, radiant flush.',
     price: 25,
-    image: '/src/assets/product-blush.jpg',
+    image: productImages['product-blush.jpg'],
     category: 'blush',
     shades: ['Hope', 'Joy', 'Peace', 'Grateful', 'Bliss'],
     features: ['Long-lasting', 'Buildable', 'Natural finish', 'Cruelty-free'],
@@ -70,7 +71,7 @@ const mockProducts: Product[] = [
     name: 'Soft Pinch Tinted Lip Oil',
     description: 'A nourishing lip oil that delivers a hint of color with incredible shine and comfort.',
     price: 22,
-    image: '/src/assets/product-lip.jpg',
+    image: productImages['product-lip.jpg'],
     category: 'lips',
     shades: ['Serenity', 'Clarity', 'Wisdom', 'Courage', 'Strength'],
     features: ['Hydrating', 'Glossy finish', 'Non-sticky', 'Buildable color'],
@@ -86,7 +87,7 @@ const mockProducts: Product[] = [
     name: 'Warm Wishes Effortless Bronzer Stick',
     description: 'An easy-to-use bronzer stick that warms and defines your complexion with a natural finish.',
     price: 28,
-    image: '/src/assets/product-bronzer.jpg',
+    image: productImages['product-bronzer.jpg'],
     category: 'face',
     shades: ['Power Boost', 'Gratitude', 'Optimistic', 'Ambitious'],
     features: ['Cream-to-powder', 'Buildable', 'Travel-friendly', 'Natural finish'],
@@ -103,7 +104,7 @@ const mockProducts: Product[] = [
     description: 'A luminous highlighter that creates a natural, lit-from-within glow.',
     price: 27,
     originalPrice: 32,
-    image: '/src/assets/product-highlighter.jpg',
+    image: productImages['product-highlighter.jpg'],
     category: 'face',
     shades: ['Exhilarate', 'Enlighten', 'Inspire', 'Motivate'],
     features: ['Luminous finish', 'Buildable', 'Lightweight', 'Long-wearing'],
@@ -115,6 +116,7 @@ const mockProducts: Product[] = [
     reviews: 967
   }
 ];
+
 
 // Helper function to get user-specific storage key
 const getUserStorageKey = (userId: string, dataType: string) => `user-data-${userId}-${dataType}`;
