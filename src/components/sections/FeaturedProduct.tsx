@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Star, Heart, Sparkles } from 'lucide-react';
+import productBlushImg from '@/assets/product-blush.jpg';
 
 const FeaturedProduct = () => {
   return (
@@ -39,7 +40,7 @@ const FeaturedProduct = () => {
           >
             <div className="glass-card p-8 rounded-3xl">
               <img
-                src="/src/assets/product-blush.jpg"
+                 src={productBlushImg}
                 alt="Soft Pinch Liquid Blush"
                 className="w-full h-96 object-cover rounded-2xl"
               />
